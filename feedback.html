@@ -4,19 +4,24 @@
     <meta charset="UTF-8">
     <title>Feedback</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        (function(){
+            emailjs.init("uQWkPNf7xLi-JtUia"); // replace with your EmailJS public key
+        })();
+    </script>
     <style>
-        /* Form container layout */
         .feedback-form {
-            width: 300px;
+            width: 350px;
             margin: 5em auto;
             padding: 2em;
             border: 1em solid purple;
             border-radius: 1em;
             background-color: black;
         }
-        /* Inputs styled like IDE text */
         .feedback-form input[type="text"],
-        .feedback-form input[type="email"] {
+        .feedback-form input[type="email"],
+        .feedback-form textarea {
             width: 100%;
             padding: 0.5em;
             margin: 1em 0;
@@ -26,7 +31,10 @@
             color: purple;
             font-family: monospace;
         }
-        /* Send button using download_btn style */
+        .feedback-form textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
         .feedback-form button {
             width: 100%;
             padding: 0.7em;
@@ -42,9 +50,14 @@
         .feedback-form button:hover {
             background-color: darkmagenta;
         }
-        /* Center the form title */
         .feedback-form h2 {
             text-align: center;
+            color: purple;
+            font-family: monospace;
+        }
+        .message {
+            text-align: center;
+            margin-top: 1em;
             color: purple;
             font-family: monospace;
         }
@@ -52,13 +65,36 @@
 </head>
 <body>
     <div class="feedback-form">
-        <h2>Feedback</h2>
-        <form action="mailto:kylekeightleyschool@outlook.com" method="post" enctype="text/plain" autocomplete="on">
+        <h2>>> Feedback</h2>
+        <form id="feedbackForm">
             <input type="text" name="subject" placeholder="Subject" required>
             <input type="email" name="mail" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Feedback" required></textarea>
             <button type="submit">Send</button>
+            <div class="message" id="message"></div>
         </form>
     </div>
+
+    <script>
+        const form = document.getElementById('feedbackForm');
+        const messageDiv = document.getElementById('message');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            emailjs.send('service_9eni5pg', 'template_yghntzj', {
+                subject: form.subject.value,
+                mail: form.mail.value,
+                message: form.message.value
+            })
+            .then(() => {
+                messageDiv.textContent = 'Feedback sent successfully!';
+                form.reset();
+            }, (error) => {
+                messageDiv.textContent = 'Failed to send feedback.';
+                console.error(error);
+            });
+        });
+    </script>
 </body>
 </html>
-
