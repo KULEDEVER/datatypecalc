@@ -24,10 +24,15 @@ div {
 	background: linear-gradient(45deg, #800080, #C040C0);
 }
 
+#menu {
+	/* add optional code here for the menu box in index.html */
+}
+
 .menu-btn {
 	color: purple;
 	background-color: black;
 	cursor: pointer;
+	border: 2px solid purple;
 }
 
 h3 {
@@ -37,3 +42,4 @@ h3 {
 h1 {
 	cursor: default;
 }
+
