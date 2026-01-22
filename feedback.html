@@ -4,10 +4,6 @@
     <meta charset="UTF-8">
     <title>Feedback</title>
     <link rel="stylesheet" href="style.css">
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script>
-        emailjs.init("uQWkPNf7xLi-JtUia"); // EmailJS public key
-    </script>
     <style>
         .feedback-form {
             width: 350px;
@@ -18,7 +14,6 @@
             background-color: black;
         }
         .feedback-form input[type="text"],
-        .feedback-form input[type="email"],
         .feedback-form textarea {
             width: 100%;
             padding: 0.5em;
@@ -66,7 +61,6 @@
         <h2>Feedback</h2>
         <form id="feedbackForm">
             <input type="text" name="subject" placeholder="Subject" required>
-            <input type="email" name="mail" placeholder="Your Email" required>
             <textarea name="message" placeholder="Your Feedback" required></textarea>
             <button type="submit">Send</button>
             <div class="message" id="message"></div>
@@ -76,22 +70,21 @@
     <script>
         const form = document.getElementById('feedbackForm');
         const messageDiv = document.getElementById('message');
+        const phoneNumber = '27715507750'; // Your WhatsApp number without + or spaces
 
         form.addEventListener('submit', function(event) {
             event.preventDefault();
 
-            emailjs.send('service_9eni5pg', 'template_yghntzj', {
-                subject: form.subject.value,
-                mail: form.mail.value,
-                message: form.message.value
-            })
-            .then(() => {
-                messageDiv.textContent = 'Feedback sent successfully!';
-                form.reset();
-            }, (error) => {
-                messageDiv.textContent = 'Failed to send feedback. Check console.';
-                console.error('EmailJS Error:', error);
-            });
+            const subject = encodeURIComponent(form.subject.value);
+            const message = encodeURIComponent(form.message.value);
+            const fullMessage = `Subject: ${subject}%0AMessage: ${message}`;
+
+            // Open WhatsApp chat in a new tab
+            const url = `https://wa.me/${phoneNumber}?text=${fullMessage}`;
+            window.open(url, '_blank');
+
+            messageDiv.textContent = 'Redirecting to WhatsApp…';
+            form.reset();
         });
     </script>
 </body>
