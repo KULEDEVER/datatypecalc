@@ -19,3 +19,12 @@ div {
 	border: 1em solid purple;
 	border-radius: 1em;
 }
+
+.download_btn::hover {
+	background-color: #0000ff;
+	color: black;
+	font-weight: bold;
+	cursor: pointer;
+	border: 1em solid purple;
+	border-radius: 1em;
+}
