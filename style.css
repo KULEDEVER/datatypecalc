@@ -1,5 +1,6 @@
 body {
 	background-color: black;
+	color: purple;
 }
 
 #screenshot1 {
@@ -21,7 +22,6 @@ body {
 
 #menu {
 	/* add optional code here for the menu box in index.html */
-	background-color: black;
 }
 
 .menu-btn {
@@ -38,8 +38,9 @@ h3 {
 
 h1 {
 	cursor: default;
-	color: purple;s
+	color: purple;
 }
+
 
 
 
