@@ -2,10 +2,6 @@ body {
 	background-color: black;
 	color: purple;
 }
-div {
-	background-color: black;
-	color: purple;
-}
 
 #screenshot1 {
 	border: 1em solid purple;
@@ -42,4 +38,5 @@ h3 {
 h1 {
 	cursor: default;
 }
+
 
