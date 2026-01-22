@@ -15,7 +15,7 @@
 		    </button>
 		</a>
 		<h3>If your download doesnt start automatically, click this button below</h3>
-		<a href="download/calc.exe" download>
+		<a href="download/calc-v1.1.exe" download>
 		    <button class="download_btn">
 		        DOWNLOAD
 		    </button>
@@ -25,7 +25,7 @@
         document.addEventListener("DOMContentLoaded", function () {
             const link = document.createElement("a");
             link.href = "download/calc.exe";
-            link.download = "calc.exe";
+            link.download = "calc-v1.1.exe";
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
@@ -33,4 +33,5 @@
 </script>
 
 </body>
+
 </html>
