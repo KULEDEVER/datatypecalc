@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Feedback</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Form container layout */
+        .feedback-form {
+            width: 300px;
+            margin: 5em auto;
+            padding: 2em;
+            border: 1em solid purple;
+            border-radius: 1em;
+            background-color: black;
+        }
+        /* Inputs styled like IDE text */
+        .feedback-form input[type="text"],
+        .feedback-form input[type="email"] {
+            width: 100%;
+            padding: 0.5em;
+            margin: 1em 0;
+            border: 1px solid purple;
+            border-radius: 0.5em;
+            background-color: black;
+            color: purple;
+            font-family: monospace;
+        }
+        /* Send button using download_btn style */
+        .feedback-form button {
+            width: 100%;
+            padding: 0.7em;
+            margin-top: 1em;
+            background-color: purple;
+            color: black;
+            font-weight: bold;
+            cursor: pointer;
+            border: 1em solid purple;
+            border-radius: 1em;
+            font-family: monospace;
+        }
+        .feedback-form button:hover {
+            background-color: darkmagenta;
+        }
+        /* Center the form title */
+        .feedback-form h2 {
+            text-align: center;
+            color: purple;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="feedback-form">
+        <h2>>> Feedback</h2>
+        <form action="mailto:your-email@example.com" method="post" enctype="text/plain">
+            <input type="text" name="subject" placeholder=">>> Subject" required>
+            <input type="email" name="mail" placeholder=">>> Your Email" required>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+</body>
+</html>
