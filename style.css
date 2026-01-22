@@ -21,9 +21,9 @@ div {
 }
 
 .download_btn:hover {
-	background-color: #7FFF7F;
-	border: 1em solid #7FFF7F;
+	background: linear-gradient(45deg, #800080, #C040C0);
 }
+
 
 
 
