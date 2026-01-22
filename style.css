@@ -1,0 +1,21 @@
+body {
+	background-color: black;
+	color: purple;
+}
+div {
+	background-color: black;
+	color: purple;
+}
+
+#screenshot1 {
+	border: 1em solid purple;
+}
+
+.download_btn {
+	background-color: purple;
+	color: black;
+	font-weight: bold;
+	cursor: pointer;
+	border: 1em solid purple;
+	border-radius: 1em;
+}
