@@ -4,20 +4,9 @@
     <meta charset="UTF-8">
     <title>Feedback</title>
     <link rel="stylesheet" href="style.css">
-    <script type="module">
-        import emailjs from 'https://cdn.emailjs.com/dist/email.esm.min.js';
-
-        // Initialize EmailJS with your public key
-        emailjs.init("uQWkPNf7xLi-JtUia");
-
-        // Make send function globally accessible
-        window.sendFeedback = function(subject, mail, message, onSuccess, onError) {
-            emailjs.send('service_9eni5pg', 'template_yghntzj', {
-                subject: subject,
-                mail: mail,
-                message: message
-            }).then(onSuccess, onError);
-        }
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+        emailjs.init("uQWkPNf7xLi-JtUia"); // EmailJS public key
     </script>
     <style>
         .feedback-form {
@@ -74,7 +63,7 @@
 </head>
 <body>
     <div class="feedback-form">
-        <h2Feedback</h2>
+        <h2>Feedback</h2>
         <form id="feedbackForm">
             <input type="text" name="subject" placeholder="Subject" required>
             <input type="email" name="mail" placeholder="Your Email" required>
@@ -84,26 +73,25 @@
         </form>
     </div>
 
-    <script type="module">
+    <script>
         const form = document.getElementById('feedbackForm');
         const messageDiv = document.getElementById('message');
 
         form.addEventListener('submit', function(event) {
             event.preventDefault();
 
-            sendFeedback(
-                form.subject.value,
-                form.mail.value,
-                form.message.value,
-                () => {
-                    messageDiv.textContent = 'Feedback sent successfully!';
-                    form.reset();
-                },
-                (error) => {
-                    console.error('EmailJS Error:', error);
-                    messageDiv.textContent = 'Failed to send feedback. Check console.';
-                }
-            );
+            emailjs.send('service_9eni5pg', 'template_yghntzj', {
+                subject: form.subject.value,
+                mail: form.mail.value,
+                message: form.message.value
+            })
+            .then(() => {
+                messageDiv.textContent = 'Feedback sent successfully!';
+                form.reset();
+            }, (error) => {
+                messageDiv.textContent = 'Failed to send feedback. Check console.';
+                console.error('EmailJS Error:', error);
+            });
         });
     </script>
 </body>
