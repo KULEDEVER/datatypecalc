@@ -2,9 +2,52 @@ import os
 import time
 
 def convert_unit_weight():
+    # Arrays of units with values relative to grams
+    imperial = [
+        ("grain", "gr", 0.06479891),
+        ("dram", "dr", 1.7718451953125),
+        ("ounce", "oz", 28.3495),
+        ("pound", "lb", 453.592),
+        ("stone", "st", 6350.29),
+        ("quarter", "qr", 12700.58),
+        ("hundredweight", "cwt", 50802.34)
+    ]
+
+    metric = [
+        ("milligram", "mg", 0.001),
+        ("centigram", "cg", 0.01),
+        ("decigram", "dg", 0.1),
+        ("gram", "g", 1),
+        ("dekagram", "dag", 10),
+        ("hectogram", "hg", 100),
+        ("kilogram", "kg", 1000)
+    ]
+
+    # Combine all units into a single dictionary for easy lookup
+    units = {abbr: value for name, abbr, value in imperial + metric}
+
+    # User input
+    print("Weight unit to convert from:")
+    weight1 = input("Weight Unit> ").lower()
+    print("Weight unit to convert to:")
+    weight2 = input("Weight Unit> ").lower()
+    print(f"Amount in {weight1}:")
+    number = float(input("> "))
+
+    # Check if units are valid
+    if weight1 not in units or weight2 not in units:
+        print(f"Invalid unit. Available units: {list(units.keys())}")
+        return
+
+    # Convert to grams first
+    value_in_grams = number * units[weight1]
+
+    # Convert from grams to target unit
+    converted_value = value_in_grams / units[weight2]
+
+    print(f"{number} {weight1} is equal to {converted_value} {weight2}")
 
 def digitaldatatypes():
-	print("Listing all available")
 	print(" ╠═Bit (b)")
 	print(" ╠═Byte (B)")
 	print(" ╠═Kilobyte (KB)")
@@ -16,6 +59,7 @@ def digitaldatatypes():
 
 def convert_digital_data():
 	print("Data to convert from")
+	digitaldatatypes()
 	global datatype1
 	datatype1 = input("Data Type> ").upper()
 	print("")
@@ -46,10 +90,6 @@ def list_unit_types():
 	print(" ╚═Weight")
 	print("")
 
-def weight_units():
-	print(" ╠═Metric")
-	print(" ╚═Imperial")
-
 def convert():
 	print("What unit do you want?")
 	list_unit_types()
@@ -60,15 +100,7 @@ def convert():
 		convert_digital_data()
 
 	if ask_unit_type == "weight":
-		weight_units()
-		global ask_weight_unit_type
-		ask_weight_unit_type=input("Weight Unit")
-
-		if ask_weight_unit_type == "metric":
-			convert_unit_weight()
-
-		if ask_weight_unit_type == "imperial":
-			convert_unit_weight()
+		convert_unit_weight()
 
 
 def clear():
@@ -78,8 +110,7 @@ def help():
 	print("Listing all available commands")
 	print(" ╠═leave - leave the app")
 	print(" ╠═convert - convert one unit to the other")
-	print(" ╠═clear - clear the screen")
-	print(" ╚═types - check all available unit types")
+	print(" ╚═clear - clear the screen")
 	print("")
 
 def com():
@@ -87,21 +118,11 @@ def com():
 	command=input("CON CALC> ")
 
 def autoexec():
-	for _ in range(5):
-		print(".")
-		time.sleep(0.25)
-		clear()
-		time.sleep(0.25)
-	time.sleep(2)
-	print("Importing modules")
-	time.sleep(2)
-	print("Loading commands")
-	time.sleep(1.5)
 	print("Loading app")
-	time.sleep(3.5)
+	time.sleep(1)
 	clear()
-	print("CON CALC 2026 - Kyle Marko James Keightley")
-	print("WELCOME TO CON CALC v1.1! TYPE ""help"" to see all available commands")
+	print("CON CALC 2026 - KULEDEVER")
+	print("WELCOME TO CON CALC v1.2! TYPE help to see all available commands")
 	print("")
 
 autoexec()
@@ -118,9 +139,6 @@ while running:
 	if command == "help":
 		help()
 
-	if command == "types":
-		digitaldatatypes()
-
 	if command == "convert":
 		convert()
 
@@ -132,9 +150,6 @@ while running:
 		
 	if command == "HELP":
 		help()
-
-	if command == "TYPES":
-		digitaldatatypes()
 
 	if command == "CONVERT":
 		convert()

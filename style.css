@@ -1,6 +1,7 @@
 body {
 	background-color: black;
 	color: purple;
+	padding-top: 80px; /* adjust based on button height + margin */
 }
 
 #screenshot1 {
@@ -8,6 +9,7 @@ body {
 }
 
 .download_btn {
+	transition-property: all 0.25s ease;
 	background-color: purple;
 	color: black;
 	font-weight: bold;
@@ -17,19 +19,67 @@ body {
 }
 
 .download_btn:hover {
-	background: linear-gradient(45deg, #800080, #C040C0);
+	background-color: greenyellow;
+	border: 1em solid greenyellow;
 }
 
-#menu {
-	/* add optional code here for the menu box in index.html */
+.menu-btn:hover {
+	letter-spacing: 5px;
+	width: 145.11px;
 }
 
+/* Container to position buttons at top-right */
+/* Position the menu at the top-left corner */
+.menu {
+    position: fixed;   /* stays at top-left even when scrolling */
+    top: 20px;         /* distance from top */
+    left: 20px;        /* distance from left */
+    display: flex;     /* arrange buttons in a row */
+    flex-direction: column;
+    gap: 10px;         /* space between buttons */
+    z-index: 1000;     /* above other content */
+}
+
+/* Your juicy button styles */
 .menu-btn {
-	color: purple;
-	background-color: black;
-	cursor: pointer;
-	border: 2px solid purple;
+    padding: 10px 20px;
+    color: purple;
+    background-color: black;
+    cursor: pointer;
+    border: 2px solid purple;
+    border-radius: 8px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: 
+        letter-spacing 0.3s ease,
+        width 0.3s ease,
+        background-color 0.3s ease,
+        color 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.3s ease;
 }
+
+/* Feedback button specific hover */
+#feedback-btn:hover {
+    letter-spacing: 5px;
+    width: 140px;
+    background-color: purple;
+    color: black;
+    transform: scale(1.1);
+    box-shadow: 0 0 15px purple, 0 0 25px purple inset;
+}
+
+/* Downloads button specific hover */
+#downloads-btn:hover {
+    letter-spacing: 5px;
+    width: 150px;
+    background-color: purple;
+    color: black;
+    transform: scale(1.1);
+    box-shadow: 0 0 15px purple, 0 0 25px purple inset;
+}
+
+
 
 h3 {
 	cursor: default;
