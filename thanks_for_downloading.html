@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Thank you for downloading</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div>
+		<div><h1 id="h11"><b>Thank you for downloading my calculator, I worked really hard on it :)</b></h1></div>
+		<div><h3>If you wanna go back, click the button below</h3></div>
+		<a href="index.html">
+		    <button class="download_btn">
+		        Go Back
+		    </button>
+		</a>
+		<h3>If your download doesnt start automatically, click this button below</h3>
+		<a href="download/calc-v1.2.exe" download>
+		    <button class="download_btn">
+		        DOWNLOAD
+		    </button>
+		</a>
+	</div>
+	<script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const link = document.createElement("a");
+            link.href = "download/v1/calc-v1.2.exe";
+            link.download = "calc-v1.2.exe";
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        });
+</script>
+
+</body>
+
+</html>
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Feedback</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .feedback-form {
+            width: 350px;
+            margin: 5em auto;
+            padding: 2em;
+            border: 1em solid purple;
+            border-radius: 1em;
+            background-color: black;
+        }
+        .feedback-form input[type="text"],
+        .feedback-form textarea {
+            width: 100%;
+            padding: 0.5em;
+            margin: 1em 0;
+            border: 1px solid purple;
+            border-radius: 0.5em;
+            background-color: black;
+            color: purple;
+            font-family: monospace;
+        }
+        .feedback-form textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        .feedback-form button {
+            width: 100%;
+            padding: 0.7em;
+            margin-top: 1em;
+            background-color: purple;
+            color: black;
+            font-weight: bold;
+            cursor: pointer;
+            border: 1em solid purple;
+            border-radius: 1em;
+            font-family: monospace;
+        }
+        .feedback-form button:hover {
+            background-color: darkmagenta;
+        }
+        .feedback-form h2 {
+            text-align: center;
+            color: purple;
+            font-family: monospace;
+        }
+        .message {
+            text-align: center;
+            margin-top: 1em;
+            color: purple;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="feedback-form">
+        <h2>Feedback</h2>
+        <form id="feedbackForm">
+            <input type="text" name="subject" placeholder="Subject" required>
+            <textarea name="message" placeholder="Your Feedback" required></textarea>
+            <button type="submit">Send</button>
+            <div class="message" id="message"></div>
+        </form>
+    </div>
+
+    <script>
+        const form = document.getElementById('feedbackForm');
+        const messageDiv = document.getElementById('message');
+        const phoneNumber = '27715507750'; // Your WhatsApp number without + or spaces
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const subject = encodeURIComponent(form.subject.value);
+            const message = encodeURIComponent(form.message.value);
+            const fullMessage = `Subject: ${subject}%0AMessage: ${message}`;
+
+            // Open WhatsApp chat in a new tab
+            const url = `https://wa.me/${phoneNumber}?text=${fullMessage}`;
+            window.open(url, '_blank');
+
+            messageDiv.textContent = 'Redirecting to WhatsApp…';
+            form.reset();
+        });
+    </script>
+</body>
+</html>
