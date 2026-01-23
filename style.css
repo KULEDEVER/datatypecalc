@@ -50,13 +50,6 @@ body {
     border-radius: 8px;
     font-weight: bold;
     letter-spacing: 1px;
-    transition: 
-        letter-spacing 0.3s ease,
-        width 0.3s ease,
-        background-color 0.3s ease,
-        color 0.3s ease,
-        box-shadow 0.3s ease,
-        transform 0.3s ease;
 }
 
 /* Feedback button specific hover */
@@ -65,8 +58,6 @@ body {
     width: 140px;
     background-color: purple;
     color: black;
-    transform: scale(1.1);
-    box-shadow: 0 0 15px purple, 0 0 25px purple inset;
 }
 
 /* Downloads button specific hover */
@@ -75,7 +66,6 @@ body {
     width: 150px;
     background-color: purple;
     color: black;
-    transform: scale(1.1);
     box-shadow: 0 0 15px purple, 0 0 25px purple inset;
 }
 
@@ -90,6 +80,7 @@ h1 {
 	cursor: default;
 	color: purple;
 }
+
 
 
 
