@@ -1,31 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Downloads</title>
-	<meta charset="UTF-8">
-	<link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>Downloads</title>
+<style>
+    body {
+        background-color: black;
+        color: purple;
+        font-family: Arial, sans-serif;
+        padding: 40px;
+    }
+
+    h3 {
+        color: purple;
+    }
+
+    /* Neon button effect for all -btn classes */
+    [class*="-btn"] {
+        position: relative;
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 16px;
+        letter-spacing: 1px;
+        color: black;
+        background-color: purple;
+        border: 2px solid purple;
+        border-radius: 1em;
+        cursor: pointer;
+        overflow: hidden;
+        z-index: 1;
+        transition: 
+            color 0.3s ease, 
+            letter-spacing 0.3s ease, 
+            border-color 0.5s ease, 
+            transform 0.3s ease;
+    }
+
+    /* Background expanding from center */
+    [class*="-btn"]::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 0%;
+        height: 100%;
+        background-color: greenyellow; /* hover color */
+        z-index: -1;
+        transition: width 0.5s ease;
+        transform: translateX(-50%);
+        border-radius: inherit;
+    }
+
+    /* Shimmer effect */
+    [class*="-btn"]::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -75%;
+        width: 50%;
+        height: 100%;
+        background: linear-gradient(120deg, rgba(255,255,255,0.3), rgba(255,255,255,0.1), rgba(255,255,255,0.3));
+        transform: skewX(-25deg);
+        transition: left 0.7s ease;
+        z-index: 2;
+    }
+
+    /* Hover effect */
+    [class*="-btn"]:hover {
+        color: black;
+        letter-spacing: 2px;
+        border-color: greenyellow;
+        transform: scale(1.05);
+    }
+
+    [class*="-btn"]:hover::before {
+        width: 110%;
+    }
+
+    [class*="-btn"]:hover::after {
+        left: 125%;
+    }
+
+    /* Optional: spacing for download buttons */
+    #download_button, div a {
+        margin-top: 20px;
+    }
+</style>
 </head>
 <body>
-	<div>
-		<h3>Click to start the download</h3>
-		<div id="download_button">
-			<a href="thanks_for_downloading.html">
-				<button class="download_btn">
-					DOWNLOAD
-				</button>
-			</a>
-		</div>
-		
-		<h3>For older releases, click the button below.</h3>
-		<div>
-		    <a href="older_versions.html">
-			    <button class="download_btn">
-				    Older Releases
-			    </button>
-		    </a>
-		</div>
+
+<div>
+    <h3>Click to start the download</h3>
+    <div id="download_button">
+        <a href="thanks_for_downloading.html">
+            <button class="download_btn">
+                DOWNLOAD
+            </button>
+        </a>
+    </div>
+    
+    <h3>For older releases, click the button below.</h3>
+    <div>
+        <a href="older_versions.html">
+            <button class="download_btn">
+                Older Releases
+            </button>
+        </a>
+    </div>
+</div>
+
 </body>
-
 </html>
-
-
