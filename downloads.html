@@ -15,8 +15,8 @@
         color: purple;
     }
 
-    /* Neon button effect for all -btn classes */
-    [class*="-btn"] {
+    /* Download buttons */
+    .download_btn {
         position: relative;
         display: inline-block;
         padding: 10px 20px;
@@ -37,14 +37,14 @@
     }
 
     /* Background expanding from center */
-    [class*="-btn"]::before {
+    .download_btn::before {
         content: '';
         position: absolute;
         top: 0;
         left: 50%;
         width: 0%;
         height: 100%;
-        background-color: greenyellow; /* hover color */
+        background-color: greenyellow;
         z-index: -1;
         transition: width 0.5s ease;
         transform: translateX(-50%);
@@ -52,7 +52,7 @@
     }
 
     /* Shimmer effect */
-    [class*="-btn"]::after {
+    .download_btn::after {
         content: '';
         position: absolute;
         top: 0;
@@ -65,23 +65,87 @@
         z-index: 2;
     }
 
-    /* Hover effect */
-    [class*="-btn"]:hover {
+    /* Hover effects */
+    .download_btn:hover {
         color: black;
         letter-spacing: 2px;
         border-color: greenyellow;
         transform: scale(1.05);
     }
 
-    [class*="-btn"]:hover::before {
+    .download_btn:hover::before {
         width: 110%;
     }
 
-    [class*="-btn"]:hover::after {
+    .download_btn:hover::after {
         left: 125%;
     }
 
-    /* Optional: spacing for download buttons */
+    /* Menu buttons */
+    .menu-btn {
+        position: relative;
+        padding: 10px 20px;
+        width: 150px;
+        color: purple;
+        background-color: black;
+        cursor: pointer;
+        border: 2px solid purple;
+        border-radius: 8px;
+        font-weight: bold;
+        letter-spacing: 1px;
+        overflow: hidden;
+        z-index: 1;
+        transition:
+            color 0.3s ease,
+            letter-spacing 0.3s ease,
+            border-color 0.5s ease,
+            transform 0.3s ease;
+    }
+
+    /* Menu button neon background */
+    .menu-btn::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 0%;
+        height: 100%;
+        background-color: purple;
+        z-index: -1;
+        transition: width 0.5s ease;
+        transform: translateX(-50%);
+        border-radius: inherit;
+    }
+
+    .menu-btn::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -75%;
+        width: 50%;
+        height: 100%;
+        background: linear-gradient(120deg, rgba(255,255,255,0.3), rgba(255,255,255,0.1), rgba(255,255,255,0.3));
+        transform: skewX(-25deg);
+        transition: left 0.7s ease;
+        z-index: 2;
+    }
+
+    .menu-btn:hover {
+        letter-spacing: 5px;
+        transform: scale(1.08);
+        color: black;
+        border-color: purple;
+    }
+
+    .menu-btn:hover::before {
+        width: 110%;
+    }
+
+    .menu-btn:hover::after {
+        left: 125%;
+    }
+
+    /* Optional spacing for buttons */
     #download_button, div a {
         margin-top: 20px;
     }
