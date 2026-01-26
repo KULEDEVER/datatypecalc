@@ -1,11 +1,7 @@
-All Rights Reserved – CON CALC 2026
+Copyright (c) 2026 BOXPROMPT - KULEDEVER
 
-Copyright (c) 2026 Kyle Marko James Keightley
+All Rights Reserved.
 
-This software, including all source code, executables, and associated files, is the intellectual property of the author.
+This software, including the source code, scripts, and resources in this repository, is the intellectual property of the author.  
 
-You are granted **no permission** to copy, modify, distribute, or use this software for any purpose without explicit written permission from the author.
-
-You may view the code for educational or personal reference only. Any other use is strictly prohibited.
-
-For inquiries regarding permission or licensing, please contact: kylekeightleyschool@outlook.com
+You may **not** copy, redistribute, modify, or use any part of this software in any form without explicit written permission from the author.
