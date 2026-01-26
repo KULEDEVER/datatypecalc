@@ -1,14 +1,20 @@
-# CON CALC 2026
+# BOXOPROMPT
 
-**License:** Proprietary – All rights reserved. Viewing for educational purposes allowed; copying, modifying, or redistribution prohibited without permission.
+**BOXOPROMPT 2026 - KULEDEVER**
 
+BOXOPROMPT is a command-line utility for converting units of **weight** and **digital data**.  
+It provides a simple, fast interface for terminal-based conversions and utility commands.
 
-CON CALC 2026 is a simple, interactive command-line calculator designed to make digital data conversions quick and easy.
-Users can convert between common data units such as bits, bytes, kilobytes, megabytes, gigabytes, terabytes, and petabytes.
-The tool also lists all available data types, provides helpful commands, and includes a clean, intuitive interface for beginners and intermediate users alike.
+## Features
+- Convert between imperial and metric weight units
+- Convert between digital data units (bit, byte, KB, MB, GB, TB, PB)
+- Clear the terminal screen
+- Display the current app version
+- Command-line interface with a simple prompt
+- Supports both uppercase and lowercase commands
 
-Features:
- - Convert any digital data unit to another (b, B, KB, MB, GB, TB, PB)
- - View all supported data types and conversions
- - Clear the screen for a clean workspace
- - Simple command-line interface for quick usage
+## Policies
+- All content in this repository, including source code and resources, is copyrighted.
+- You are **not allowed** to redistribute, copy, or modify any part of this software without explicit written permission from the author.
+- The app may be used for personal purposes only.
+- Commercial use or redistribution in any form is strictly prohibited.
