@@ -89,8 +89,13 @@ body {
 }
 
 /* Headings */
-.indev, .h11, .retquestion, .appreason, .sayless {
+.h11, .retquestion, .appreason, .sayless {
 	cursor: default;
 	color: purple;
+}
+.indev {
+	cursor: default;
+	color: red;
+	background-color: yellow;
 }
 
