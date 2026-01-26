@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Feedback</title>
-    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <h1 class="feed">Feedback</h1>
@@ -22,6 +21,18 @@
     </form>
 <style>
 
+body {
+    background-color: black;
+}
+
+form {
+    text-align: center;
+    align-self: center;
+}
+h1 {
+    align-self: center;
+    text-align: center;
+}
 .feed {
 	color: purple;
 	background-color: black;
@@ -36,6 +47,7 @@
     background-color: purple;
     border: 2px solid purple;       /* reasonable border */
     cursor: pointer;
+    border-radius: 5px;
 }
 
 .feed-btn:hover {
@@ -44,8 +56,12 @@
     border-color: #7FFF00;
     transform: scale(1.5);          /* grows on hover */
 }
+input, textarea {
+    border: 2px solid purple;
+    border-radius: 5px;
+    background-color: black;
+    color: purple;
+}
 </style>
 </body>
 </html>
-
-
