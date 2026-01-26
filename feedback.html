@@ -2,90 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Feedback</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        .feedback-form {
-            width: 350px;
-            margin: 5em auto;
-            padding: 2em;
-            border: 1em solid purple;
-            border-radius: 1em;
-            background-color: black;
-        }
-        .feedback-form input[type="text"],
-        .feedback-form textarea {
-            width: 100%;
-            padding: 0.5em;
-            margin: 1em 0;
-            border: 1px solid purple;
-            border-radius: 0.5em;
-            background-color: black;
-            color: purple;
-            font-family: monospace;
-        }
-        .feedback-form textarea {
-            resize: vertical;
-            min-height: 100px;
-        }
-        .feedback-form button {
-            width: 100%;
-            padding: 0.7em;
-            margin-top: 1em;
-            background-color: purple;
-            color: black;
-            font-weight: bold;
-            cursor: pointer;
-            border: 1em solid purple;
-            border-radius: 1em;
-            font-family: monospace;
-        }
-        .feedback-form button:hover {
-            background-color: darkmagenta;
-        }
-        .feedback-form h2 {
-            text-align: center;
-            color: purple;
-            font-family: monospace;
-        }
-        .message {
-            text-align: center;
-            margin-top: 1em;
-            color: purple;
-            font-family: monospace;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="feedback-form">
-        <h2>Feedback</h2>
-        <form id="feedbackForm">
-            <input type="text" name="subject" placeholder="Subject" required>
-            <textarea name="message" placeholder="Your Feedback" required></textarea>
-            <button type="submit">Send</button>
-            <div class="message" id="message"></div>
-        </form>
-    </div>
+    <h1 class="appreason">Feedback</h1>
+    <form action="mailto:boxopromptofficial@outlook.com" method="POST" enctype="text/plain">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="Name" required><br><br>
 
-    <script>
-        const form = document.getElementById('feedbackForm');
-        const messageDiv = document.getElementById('message');
-        const phoneNumber = '27715507750'; // Your WhatsApp number without + or spaces
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="Email" required><br><br>
 
-        form.addEventListener('submit', function(event) {
-            event.preventDefault();
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="Message" rows="5" required></textarea><br><br>
 
-            const subject = encodeURIComponent(form.subject.value);
-            const message = encodeURIComponent(form.message.value);
-            const fullMessage = `Subject: ${subject}%0AMessage: ${message}`;
-
-            // Open WhatsApp chat in a new tab
-            const url = `https://wa.me/${phoneNumber}?text=${fullMessage}`;
-            window.open(url, '_blank');
-
-            messageDiv.textContent = 'Redirecting to WhatsApp…';
-            form.reset();
-        });
-    </script>
+        <button type="submit">Send Feedback</button>
+    </form>
 </body>
 </html>
